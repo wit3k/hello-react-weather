@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import './App.css';
 import LocationPicker from './components/LocationPicker'
 import LocationListing from './components/LocationListing'
-import LocationWeatherForecast from './components/LocationWeatherForecast'
 
 class App extends Component {
   constructor(props) {
@@ -25,7 +24,6 @@ class App extends Component {
       <div className="App">
           <LocationPicker onDataFetch={this.listCities} />
           <LocationListing fetchedLocations={this.state.cities} />
-          <LocationWeatherForecast daysOfWeather={[]} />
       </div>
     )
 }
