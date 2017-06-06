@@ -16,6 +16,7 @@ class LocationWeatherForecast extends Component {
       .then(_ => _.json())
       .then(forecast => this.setState({forecast}))
   }
+
   render = () => (
       <div>
         {this.state.forecast.consolidated_weather.map(day =>

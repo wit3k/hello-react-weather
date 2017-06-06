@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
 
 class WeatherForecastBox extends Component {
-  iconUrl = (weatherStateAbbr) => '/static/img/weather/png/64/'+weatherStateAbbr+'.png'
+  boxStyle = {
+    borderColor: 'silver',
+    borderStyle: 'solid'
+  }
+
+  iconUrl = weatherStateAbbr => '/static/img/weather/png/64/' + weatherStateAbbr + '.png'
+
   render = () => (
-      <div style={({
-          borderColor: 'silver',
-          borderStyle: 'solid'
-        })}>
+      <div style={this.boxStyle}>
           {this.props.weather.applicable_date}
           <br/>
           <img src={this.iconUrl(this.props.weather.weather_state_abbr)} />
