@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import WeatherForecastBox from './WeatherForecastBox'
+
 class LocationWeatherForecast extends Component {
   constructor(props) {
     super(props);

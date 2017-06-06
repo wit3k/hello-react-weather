@@ -29,10 +29,10 @@ class WorldMap extends Component {
     left: this.props.position.x+'px',
     top: this.props.position.y+'px',
     backgroundColor: 'white',
-    borderWidth: 2+'px',
+    borderWidth: 2 + 'px',
     borderColor: 'silver',
     borderStyle: 'solid',
-    padding: 15+'px'
+    padding: 15 + 'px'
   })
 
   render = () => (

@@ -15,7 +15,7 @@ class App extends Component {
     }
   }
 
-  listCities = position => e =>  !position ? '' :
+  listCities = position => e => !position ? '' :
     fetch('/api/location/search/?lattlong=' + position.latitude + ',' + position.longtitude)
     .then(_ => _.json())
     .then(cities => this.setState({cities}))
