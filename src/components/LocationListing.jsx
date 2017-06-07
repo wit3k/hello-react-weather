@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import LocationRow from './LocationRow'
+import PropTypes from 'prop-types';
+import LocationsCollumn from './LocationsCollumn'
 
 class LocationListing extends Component {
   constructor(props) {
@@ -20,23 +21,27 @@ class LocationListing extends Component {
     })
 
   render = () => (
-      <div className="location-listing">
-        <div className="left-collumn">
-          <LocationRow
-            items={this.props.fetchedLocations}
-            clickClick={this.storeLocation}
-            clickClickIcon="+"
-            clickClickIconColor="blue" />
-        </div>
-        <div className="right-collumn">
-          <LocationRow
-            items={this.state.locations}
-            clickClick={this.removeLocation}
-            clickClickIcon="x"
-            clickClickIconColor="red" />
-        </div>
+    <div className="location-listing">
+      <div className="left-collumn">
+        <LocationsCollumn
+          items={this.props.fetchedLocations}
+          clickClick={this.storeLocation}
+          clickClickIcon="+"
+          clickClickIconColor="blue" />
       </div>
-    )
+      <div className="right-collumn">
+        <LocationsCollumn
+          items={this.state.locations}
+          clickClick={this.removeLocation}
+          clickClickIcon="x"
+          clickClickIconColor="red" />
+      </div>
+    </div>
+  )
+
+  static propTypes = {
+    fetchedLocations: PropTypes.arrayOf(PropTypes.object).isRequired
+  }
 }
 
 export default LocationListing;

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class WorldMap extends Component {
   badgeStyle = () => ({
@@ -25,6 +26,13 @@ class WorldMap extends Component {
       </div>
     </div>
   )
+
+  static propTypes = {
+    position: PropTypes.object,
+    isPositionOutside: PropTypes.bool,
+    longtitude: PropTypes.func.isRequired,
+    latitude: PropTypes.func.isRequired
+  }
 }
 
 export default WorldMap;

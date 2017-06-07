@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import WeatherForecastBox from './WeatherForecastBox'
 
 class LocationWeatherForecast extends Component {
@@ -18,15 +19,19 @@ class LocationWeatherForecast extends Component {
   }
 
   render = () => (
-      <div>
-        {this.state.forecast.consolidated_weather.map(day =>
-          <WeatherForecastBox
-            key={day.applicable_date}
-            weather={day}
-            location={this.props.location} />
-        )}
-      </div>
-    )
+    <div>
+      {this.state.forecast.consolidated_weather.map(day =>
+        <WeatherForecastBox
+          key={day.applicable_date}
+          weather={day}
+          location={this.props.location} />
+      )}
+    </div>
+  )
+
+  static propTypes = {
+    location: PropTypes.object.isRequired
+  }
 }
 
 export default LocationWeatherForecast;

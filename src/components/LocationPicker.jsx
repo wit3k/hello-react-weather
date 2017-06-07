@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ReactCursorPosition from 'react-cursor-position';
+import PropTypes from 'prop-types';
 import WorldMap from './WorldMap'
 
 class LocationPicker extends Component {
@@ -35,7 +36,11 @@ class LocationPicker extends Component {
           latitude={this.calculateLatitude} />
       </ReactCursorPosition>
     </div>
-    )
+  )
+
+  static propTypes = {
+    onDataFetch: PropTypes.func.isRequired
+  }
 }
 
 export default LocationPicker;
